@@ -1,3 +1,9 @@
+include: "//@{CONFIG_PROJECT_NAME}/country_coordinates.view"
+
+view: country_coordinates {
+  extends: [country_coordinates_config]
+}
+
 view: country_coordinates_core {
   derived_table: {
     sql: select country, country_iso

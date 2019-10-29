@@ -1,5 +1,11 @@
+include: "//@{CONFIG_PROJECT_NAME}/insights_age_and_gender.view"
+
+view: ad_insights_by_age_and_gender {
+  extends: [ad_insights_by_age_and_gender_config]
+}
+
 view: ad_insights_by_age_and_gender_core {
-  sql_table_name: @{FACEBOOK_ADS_SCHEMA_NAME}.facebook_ads_insights_age_and_gender_101441173373823 ;;
+  sql_table_name: @{FACEBOOK_ADS_SCHEMA_NAME}.facebook_ads_insights_age_and_gender_@{FACEBOOK_ADS_ACCOUNT_ID} ;;
   ## STANDARD FIELDS
 
   dimension: account_id {

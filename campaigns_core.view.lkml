@@ -1,5 +1,11 @@
+include: "//@{CONFIG_PROJECT_NAME}/campaigns.view"
+
+view: campaigns {
+  extends: [campaigns_config]
+}
+
 view: campaigns_core {
-  sql_table_name: @{FACEBOOK_ADS_SCHEMA_NAME}.facebook_campaigns_101441173373823 ;;
+  sql_table_name: @{FACEBOOK_ADS_SCHEMA_NAME}.facebook_campaigns_@{FACEBOOK_ADS_ACCOUNT_ID} ;;
 
   dimension: id {
     primary_key: yes

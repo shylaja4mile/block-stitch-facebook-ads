@@ -1,5 +1,11 @@
+include: "//@{CONFIG_PROJECT_NAME}/ads_insights.view"
+
+view: ads_insights {
+  extends: [ads_insights_config]
+}
+
 view: ad_insights_core {
-  sql_table_name: @{FACEBOOK_ADS_SCHEMA_NAME}.facebook_ads_insights_101441173373823 ;;
+  sql_table_name: @{FACEBOOK_ADS_SCHEMA_NAME}.facebook_ads_insights_@{FACEBOOK_ADS_ACCOUNT_ID} ;;
   # API documentation: https://developers.facebook.com/docs/marketing-api/insights/fields/v2.6
 
   ## STANDARD FIELDS
@@ -26,7 +32,7 @@ view: ad_insights_core {
 
   dimension: campaign_name {
     type: string
-    sql: ${campaigns_core.name} ;;
+    sql: ${campaigns.name} ;;
   }
 
   dimension: clicks {

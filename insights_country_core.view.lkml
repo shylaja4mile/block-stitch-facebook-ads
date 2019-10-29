@@ -1,5 +1,11 @@
+include: "//@{CONFIG_PROJECT_NAME}/insights_country.view"
+
+view: ad_insights_by_country {
+  extends: [ad_insights_by_country_config]
+}
+
 view: ad_insights_by_country_core {
-  sql_table_name: @{FACEBOOK_ADS_SCHEMA_NAME}.facebook_ads_insights_country_101441173373823 ;;
+  sql_table_name: @{FACEBOOK_ADS_SCHEMA_NAME}.facebook_ads_insights_country_@{FACEBOOK_ADS_ACCOUNT_ID} ;;
   ## STANDARD FIELDS
 
   dimension: account_id {
@@ -24,7 +30,7 @@ view: ad_insights_by_country_core {
 
   dimension: campaign_name {
     type: string
-    sql: ${campaigns_core.name} ;;
+    sql: ${campaigns.name} ;;
   }
 
   dimension: clicks {

@@ -4,9 +4,8 @@ view: ads {
   extends: [ads_config]
 }
 
-
 view: ads_core {
-  sql_table_name: @{FACEBOOK_ADS_SCHEMA_NAME}.facebook_ads_101441173373823 ;;
+  sql_table_name: @{FACEBOOK_ADS_SCHEMA_NAME}.facebook_ads_@{FACEBOOK_ADS_ACCOUNT_ID} ;;
   # API documentation here: https://developers.facebook.com/docs/marketing-api/reference/adgroup
 
   dimension: id {

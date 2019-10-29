@@ -1,5 +1,11 @@
+include: "//@{CONFIG_PROJECT_NAME}/insights__actions.view"
+
+view: ad_action_insights {
+  extends: [ad_action_insights_config]
+}
+
 view: ad_action_insights_core {
-  sql_table_name: @{FACEBOOK_ADS_SCHEMA_NAME}.facebook_ads_insights_101441173373823__actions ;;
+  sql_table_name: @{FACEBOOK_ADS_SCHEMA_NAME}.facebook_ads_insights_@{FACEBOOK_ADS_ACCOUNT_ID}__actions ;;
 
   dimension: ad_id {
     type: string
@@ -99,11 +105,11 @@ view: ad_action_insights_core {
 
   dimension: campaign_objective {
     type: string
-    sql: ${campaigns_core.objective} ;;
+    sql: ${campaigns.objective} ;;
   }
 
   dimension: campaign_name {
     type: string
-    sql: ${campaigns_core.name} ;;
+    sql: ${campaigns.name} ;;
   }
 }

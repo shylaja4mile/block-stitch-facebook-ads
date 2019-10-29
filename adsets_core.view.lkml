@@ -1,5 +1,11 @@
+include: "//@{CONFIG_PROJECT_NAME}/adsets.view"
+
+view: adsets {
+  extends: [adsets_config]
+}
+
 view: adsets_core {
-  sql_table_name: @{FACEBOOK_ADS_SCHEMA_NAME}.facebook_adsets_101441173373823 ;;
+  sql_table_name: @{FACEBOOK_ADS_SCHEMA_NAME}.facebook_adsets_@{FACEBOOK_ADS_ACCOUNT_ID} ;;
 
   dimension: id {
     primary_key: yes

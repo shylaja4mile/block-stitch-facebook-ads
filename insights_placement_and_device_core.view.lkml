@@ -1,5 +1,11 @@
+include: "//@{CONFIG_PROJECT_NAME}/insights_placement_and_device.view"
+
+view: ad_insights_by_placement_and_device {
+  extends: [ad_insights_by_placement_and_device_config]
+}
+
 view: ad_insights_by_placement_and_device_core {
-  sql_table_name: @{FACEBOOK_ADS_SCHEMA_NAME}.facebook_ads_insights_placement_and_device_101441173373823 ;;
+  sql_table_name: @{FACEBOOK_ADS_SCHEMA_NAME}.facebook_ads_insights_placement_and_device_@{FACEBOOK_ADS_ACCOUNT_ID} ;;
   ## STANDARD FIELDS
 
   dimension: account_id {
