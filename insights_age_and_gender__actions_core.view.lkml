@@ -1,5 +1,5 @@
-view: ad_actions_by_country_core {
-  sql_table_name: facebook_data.facebook_ads_insights_country_101441173373823__actions ;;
+view: ad_actions_by_age_and_gender_core {
+  sql_table_name: @{FACEBOOK_ADS_SCHEMA_NAME}.facebook_ads_insights_age_and_gender_101441173373823__actions ;;
 
   dimension: ad_id {
     type: string
@@ -16,34 +16,33 @@ view: ad_actions_by_country_core {
     sql: ${TABLE}._sdc_source_key_campaign_id ;;
   }
 
-  dimension_group: date_start {
-    type: time
-    timeframes: [time, date, week, month]
+  dimension: date_start {
+    type: string
     sql: ${TABLE}._sdc_source_key_date_start ;;
   }
 
-  dimension: action_destination {
+  dimension: gender {
+    type: string
+    sql: ${TABLE}._sdc_source_key_gender ;;
+  }
+
+  dimension: action_destination_by_age_and_gender {
     type: string
     sql: ${TABLE}.action_destination ;;
   }
 
-  dimension: action_type {
+  dimension: action_type_by_age_and_gender {
     type: string
     sql: ${TABLE}.action_type ;;
   }
 
-  dimension: value {
+  dimension: value_by_age_and_gender {
     type: number
     sql: ${TABLE}.value ;;
   }
 
-  measure: count {
+  measure: count_by_age_and_gender {
     type: count
     drill_fields: []
-  }
-
-  measure: total_actions {
-    type: sum
-    sql: ${TABLE}.value ;;
   }
 }

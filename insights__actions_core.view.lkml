@@ -1,5 +1,5 @@
 view: ad_action_insights_core {
-  sql_table_name: facebook_data.facebook_ads_insights_101441173373823__actions ;;
+  sql_table_name: @{FACEBOOK_ADS_SCHEMA_NAME}.facebook_ads_insights_101441173373823__actions ;;
 
   dimension: ad_id {
     type: string

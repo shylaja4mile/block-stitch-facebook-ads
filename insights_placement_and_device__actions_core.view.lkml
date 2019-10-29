@@ -1,5 +1,5 @@
-view: ad_actions_by_age_and_gender_core {
-  sql_table_name: facebook_data.facebook_ads_insights_age_and_gender_101441173373823__actions ;;
+view: ad_actions_by_placement_and_device_core {
+  sql_table_name: @{FACEBOOK_ADS_SCHEMA_NAME}.facebook_ads_insights_placement_and_device_101441173373823__actions ;;
 
   dimension: ad_id {
     type: string
@@ -16,32 +16,38 @@ view: ad_actions_by_age_and_gender_core {
     sql: ${TABLE}._sdc_source_key_campaign_id ;;
   }
 
-  dimension: date_start {
-    type: string
+  dimension_group: date_start {
+    type: time
+    timeframes: [time, date, week, month]
     sql: ${TABLE}._sdc_source_key_date_start ;;
   }
 
-  dimension: gender {
+  dimension: impression_device {
     type: string
-    sql: ${TABLE}._sdc_source_key_gender ;;
+    sql: ${TABLE}._sdc_source_key_impression_device ;;
   }
 
-  dimension: action_destination_by_age_and_gender {
+  dimension: placement {
+    type: string
+    sql: ${TABLE}._sdc_source_key_placement ;;
+  }
+
+  dimension: action_destination {
     type: string
     sql: ${TABLE}.action_destination ;;
   }
 
-  dimension: action_type_by_age_and_gender {
+  dimension: action_type {
     type: string
     sql: ${TABLE}.action_type ;;
   }
 
-  dimension: value_by_age_and_gender {
+  dimension: value {
     type: number
     sql: ${TABLE}.value ;;
   }
 
-  measure: count_by_age_and_gender {
+  measure: count {
     type: count
     drill_fields: []
   }

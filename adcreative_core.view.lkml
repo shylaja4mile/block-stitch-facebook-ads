@@ -1,5 +1,12 @@
+include: "//@{CONFIG_PROJECT_NAME}/adcreative.view"
+
+view: adcreative {
+  extends: [adcreative_config]
+}
+
+
 view: adcreative_core {
-  sql_table_name: facebook_data.facebook_adcreative_101441173373823 ;;
+  sql_table_name: @{FACEBOOK_ADS_SCHEMA_NAME}.facebook_adcreative_@{FACEBOOK_ADS_ACCOUNT_ID} ;;
 
     dimension: actor_id {
       type: string

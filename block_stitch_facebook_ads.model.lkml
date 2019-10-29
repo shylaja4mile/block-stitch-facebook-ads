@@ -1,43 +1,22 @@
-connection: "facebook_data"
+connection: "@{CONNECTION_NAME}"
 
-# include all the views
-include: "*.view"
-
-# include all the dashboards #
-include: "*.dashboard"
+include: "*.view.lkml"
+include: "*.explore.lkml"
+include: "*.dashboard.lookml"
+include: "//@{CONFIG_PROJECT_NAME}/*.view.lkml"
+include: "//@{CONFIG_PROJECT_NAME}/*.model.lkml"
+include: "//@{CONFIG_PROJECT_NAME}/*.dashboard"
 
 explore: country_coordinates_core {}
 
-explore: ads_core {
-  join: campaigns_core {
-    type: left_outer
-    sql_on: ${ads_core.campaign_id} = ${campaigns_core.id} ;;
-    relationship: many_to_one
-  }
-
-  join: adsets_core {
-    type: left_outer
-    sql_on: ${ads_core.adset_id} = ${adsets_core.id} ;;
-    relationship: many_to_one
-  }
-
-  join: adcreative_core {
-    type: left_outer
-    sql_on: ${ads_core.creative_id} = ${adcreative_core.id} ;;
-    relationship: many_to_one
-  }
-
-  join: campaign_utm_core {
-    type: left_outer
-    sql_on: ${ads_core.creative_id} = ${campaign_utm_core.creative_id} ;;
-    relationship: many_to_one
-  }
+explore: ads {
+  extends: [ads_config]
 }
 
 explore: ad_insights_core {
-  join: ads_core {
+  join: ads {
     type: left_outer
-    sql_on: ${ad_insights_core.ad_id} = ${ads_core.id} ;;
+    sql_on: ${ad_insights_core.ad_id} = ${ads.id} ;;
     relationship: many_to_one
   }
 
@@ -55,9 +34,9 @@ explore: ad_insights_core {
 }
 
 explore: ad_action_insights_core {
-  join: ads_core {
+  join: ads {
     type: left_outer
-    sql_on: ${ad_action_insights_core.ad_id} = ${ads_core.id} ;;
+    sql_on: ${ad_action_insights_core.ad_id} = ${ads.id} ;;
     relationship: many_to_one
   }
 
@@ -75,9 +54,9 @@ explore: ad_action_insights_core {
 }
 
 explore: ad_insights_by_age_and_gender_core {
-  join: ads_core {
+  join: ads {
     type: left_outer
-    sql_on: ${ad_insights_by_age_and_gender_core.ad_id} = ${ads_core.id} ;;
+    sql_on: ${ad_insights_by_age_and_gender_core.ad_id} = ${ads.id} ;;
     relationship: many_to_one
   }
 
@@ -95,9 +74,9 @@ explore: ad_insights_by_age_and_gender_core {
 }
 
 explore: ad_actions_by_age_and_gender_core {
-  join: ads_core {
+  join: ads {
     type: left_outer
-    sql_on: ${ad_actions_by_age_and_gender_core.ad_id} = ${ads_core.id} ;;
+    sql_on: ${ad_actions_by_age_and_gender_core.ad_id} = ${ads.id} ;;
     relationship: many_to_one
   }
 
@@ -115,9 +94,9 @@ explore: ad_actions_by_age_and_gender_core {
 }
 
 explore: ad_insights_by_country_core {
-  join: ads_core {
+  join: ads {
     type: left_outer
-    sql_on: ${ad_insights_by_country_core.ad_id} = ${ads_core.id} ;;
+    sql_on: ${ad_insights_by_country_core.ad_id} = ${ads.id} ;;
     relationship: many_to_one
   }
 
@@ -141,9 +120,9 @@ explore: ad_insights_by_country_core {
 }
 
 explore: ad_actions_by_country_core {
-  join: ads_core {
+  join: ads {
     type: left_outer
-    sql_on: ${ad_actions_by_country_core.ad_id} = ${ads_core.id} ;;
+    sql_on: ${ad_actions_by_country_core.ad_id} = ${ads.id} ;;
     relationship: many_to_one
   }
 
@@ -161,9 +140,9 @@ explore: ad_actions_by_country_core {
 }
 
 explore: ad_insights_by_placement_and_device_core {
-  join: ads_core {
+  join: ads {
     type: left_outer
-    sql_on: ${ad_insights_by_placement_and_device_core.ad_id} = ${ads_core.id} ;;
+    sql_on: ${ad_insights_by_placement_and_device_core.ad_id} = ${ads.id} ;;
     relationship: many_to_one
   }
 
@@ -181,9 +160,9 @@ explore: ad_insights_by_placement_and_device_core {
 }
 
 explore: ad_actions_by_placement_and_device_core {
-  join: ads_core {
+  join: ads {
     type: left_outer
-    sql_on: ${ad_actions_by_placement_and_device_core.ad_id} = ${ads_core.id} ;;
+    sql_on: ${ad_actions_by_placement_and_device_core.ad_id} = ${ads.id} ;;
     relationship: many_to_one
   }
 

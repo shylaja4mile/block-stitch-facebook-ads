@@ -1,5 +1,5 @@
-view: ad_actions_by_placement_and_device_core {
-  sql_table_name: facebook_data.facebook_ads_insights_placement_and_device_101441173373823__actions ;;
+view: ad_actions_by_country_core {
+  sql_table_name: @{FACEBOOK_ADS_SCHEMA_NAME}.facebook_ads_insights_country_101441173373823__actions ;;
 
   dimension: ad_id {
     type: string
@@ -22,16 +22,6 @@ view: ad_actions_by_placement_and_device_core {
     sql: ${TABLE}._sdc_source_key_date_start ;;
   }
 
-  dimension: impression_device {
-    type: string
-    sql: ${TABLE}._sdc_source_key_impression_device ;;
-  }
-
-  dimension: placement {
-    type: string
-    sql: ${TABLE}._sdc_source_key_placement ;;
-  }
-
   dimension: action_destination {
     type: string
     sql: ${TABLE}.action_destination ;;
@@ -50,5 +40,10 @@ view: ad_actions_by_placement_and_device_core {
   measure: count {
     type: count
     drill_fields: []
+  }
+
+  measure: total_actions {
+    type: sum
+    sql: ${TABLE}.value ;;
   }
 }
