@@ -28,7 +28,7 @@ local_dependency: {
   project: "@{CONFIG_PROJECT_NAME}"
 
   override_constant: CONNECTION_NAME {
-    value: "facebook_data"
+    value: "@{CONNECTION_NAME}"
   }
 
   override_constant: FACEBOOK_ADS_SCHEMA_NAME {
