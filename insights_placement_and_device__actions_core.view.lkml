@@ -1,4 +1,5 @@
-include: "//@{CONFIG_PROJECT_NAME}/ad_actions_by_placement_and_device.view"
+#include: "//@{CONFIG_PROJECT_NAME}/ad_actions_by_placement_and_device.view"
+include: "//@{CONFIG_PROJECT_NAME}/insights_placement_and_device__actions.view"
 
 view: ad_actions_by_placement_and_device {
   extends: [ad_actions_by_placement_and_device_config]
