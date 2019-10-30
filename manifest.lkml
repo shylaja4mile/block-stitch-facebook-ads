@@ -18,7 +18,7 @@ constant: FACEBOOK_ADS_SCHEMA_NAME {
 }
 
 constant: FACEBOOK_ADS_ACCOUNT_ID {
-  value: "facbook ads account id"
+  value: "101441173373823"
   export: override_required
 }
 
@@ -38,13 +38,5 @@ local_dependency: {
   override_constant: FACEBOOK_ADS_ACCOUNT_ID {
     value: "@{FACEBOOK_ADS_ACCOUNT_ID}"
   }
-
-  # override_constant: FACEBOOK_ADS_SCHEMA_NAME {
-  #   value: "facebook_data"
-  # }
-
-  # override_constant: FACEBOOK_ADS_ACCOUNT_ID {
-  #   value: "101441173373823"
-  # }
 
 }
