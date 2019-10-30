@@ -1,7 +1,7 @@
-include: "//@{CONFIG_PROJECT_NAME}/ad_insights.view"
+include: "//@{CONFIG_PROJECT_NAME}/ads_insights.view"
 
 view: ad_insights {
-  extends: [ad_insights_config]
+  extends: [ads_insights_config]
 }
 
 view: ad_insights_core {
