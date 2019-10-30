@@ -52,7 +52,7 @@ view: ad_insights_by_country_core {
   dimension: country_iso {
     type: string
     map_layer_name: countries
-    sql: ${country_coordinates_core.country_iso} ;;
+    sql: ${country_coordinates.country_iso} ;;
   }
 
   dimension: cpc {
