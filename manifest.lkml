@@ -18,7 +18,7 @@ constant: FACEBOOK_ADS_SCHEMA_NAME {
 }
 
 constant: FACEBOOK_ADS_ACCOUNT_ID {
-  value: "101441173373823"
+  value: "facbook ads account id"
   export: override_required
 }
 
@@ -40,13 +40,3 @@ local_dependency: {
   }
 
 }
-
-
-
-
-# # Use local_dependency: To enable referencing of another project
-# # on this instance with include: statements
-#
-# local_dependency: {
-#   project: "name_of_other_project"
-# }
