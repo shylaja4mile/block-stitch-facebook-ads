@@ -7,184 +7,46 @@ include: "//@{CONFIG_PROJECT_NAME}/*.view.lkml"
 include: "//@{CONFIG_PROJECT_NAME}/*.model.lkml"
 include: "//@{CONFIG_PROJECT_NAME}/*.dashboard"
 
-explore: country_coordinates {}
+explore: country_coordinates {
+  extends: [country_coordinates_config]
+}
 
 explore: ads {
   extends: [ads_config]
 }
 
 explore: ad_insights {
-  join: ads {
-    type: left_outer
-    sql_on: ${ad_insights.ad_id} = ${ads.id} ;;
-    relationship: many_to_one
-  }
-
-  join: adsets {
-    type: left_outer
-    sql_on: ${ad_insights.adset_id} = ${adsets.id} ;;
-    relationship: many_to_one
-  }
-
-  join: campaigns {
-    type: left_outer
-    sql_on: ${ad_insights.campaign_id} = ${campaigns.id} ;;
-    relationship: many_to_one
-  }
+  extends: [ad_insights_config]
 }
 
 explore: ad_action_insights {
-  join: ads {
-    type: left_outer
-    sql_on: ${ad_action_insights.ad_id} = ${ads.id} ;;
-    relationship: many_to_one
-  }
-
-  join: adsets {
-    type: left_outer
-    sql_on: ${ad_action_insights.adset_id} = ${adsets.id} ;;
-    relationship: many_to_one
-  }
-
-  join: campaigns {
-    type: left_outer
-    sql_on: ${ad_action_insights.campaign_id} = ${campaigns.id} ;;
-    relationship: many_to_one
-  }
+  extends: [ad_action_insights_config]
 }
 
 explore: ad_insights_by_age_and_gender {
-  join: ads {
-    type: left_outer
-    sql_on: ${ad_insights_by_age_and_gender.ad_id} = ${ads.id} ;;
-    relationship: many_to_one
-  }
-
-  join: adsets {
-    type: left_outer
-    sql_on: ${ad_insights_by_age_and_gender.adset_id} = ${adsets.id} ;;
-    relationship: many_to_one
-  }
-
-  join: campaigns {
-    type: left_outer
-    sql_on: ${ad_insights_by_age_and_gender.campaign_id} = ${campaigns.id} ;;
-    relationship: many_to_one
-  }
+  extends: [ad_insights_by_age_and_gender_config]
 }
 
 explore: ad_actions_by_age_and_gender {
-  join: ads {
-    type: left_outer
-    sql_on: ${ad_actions_by_age_and_gender.ad_id} = ${ads.id} ;;
-    relationship: many_to_one
-  }
-
-  join: adsets {
-    type: left_outer
-    sql_on: ${ad_actions_by_age_and_gender.adset_id} = ${adsets.id} ;;
-    relationship: many_to_one
-  }
-
-  join: campaigns {
-    type: left_outer
-    sql_on: ${ad_actions_by_age_and_gender.campaign_id} = ${campaigns.id} ;;
-    relationship: many_to_one
-  }
+  extends: [ad_actions_by_age_and_gender_config]
 }
 
 explore: ad_insights_by_country {
-  join: ads {
-    type: left_outer
-    sql_on: ${ad_insights_by_country.ad_id} = ${ads.id} ;;
-    relationship: many_to_one
-  }
-
-  join: adsets {
-    type: left_outer
-    sql_on: ${ad_insights_by_country.adset_id} = ${adsets.id} ;;
-    relationship: many_to_one
-  }
-
-  join: campaigns {
-    type: left_outer
-    sql_on: ${ad_insights_by_country.campaign_id} = ${campaigns.id} ;;
-    relationship: many_to_one
-  }
-
-  join: country_coordinates {
-    type: left_outer
-    sql_on: ${ad_insights_by_country.country} = ${country_coordinates.country} ;;
-    relationship: many_to_one
-  }
+  extends: [ad_insights_by_country_config]
 }
 
 explore: ad_actions_by_country {
-  join: ads {
-    type: left_outer
-    sql_on: ${ad_actions_by_country.ad_id} = ${ads.id} ;;
-    relationship: many_to_one
-  }
-
-  join: adsets {
-    type: left_outer
-    sql_on: ${ad_actions_by_country.adset_id} = ${adsets.id} ;;
-    relationship: many_to_one
-  }
-
-  join: campaigns {
-    type: left_outer
-    sql_on: ${ad_actions_by_country.campaign_id} = ${campaigns.id} ;;
-    relationship: many_to_one
-  }
+  extends: [ad_actions_by_country_config]
 }
 
 explore: ad_insights_by_placement_and_device {
-  join: ads {
-    type: left_outer
-    sql_on: ${ad_insights_by_placement_and_device.ad_id} = ${ads.id} ;;
-    relationship: many_to_one
-  }
-
-  join: adsets {
-    type: left_outer
-    sql_on: ${ad_insights_by_placement_and_device.adset_id} = ${adsets.id} ;;
-    relationship: many_to_one
-  }
-
-  join: campaigns {
-    type: left_outer
-    sql_on: ${ad_insights_by_placement_and_device.campaign_id} = ${campaigns.id} ;;
-    relationship: many_to_one
-  }
+  extends: [ad_insights_by_placement_and_device_config]
 }
 
 explore: ad_actions_by_placement_and_device {
-  join: ads {
-    type: left_outer
-    sql_on: ${ad_actions_by_placement_and_device.ad_id} = ${ads.id} ;;
-    relationship: many_to_one
-  }
-
-  join: adsets {
-    type: left_outer
-    sql_on: ${ad_actions_by_placement_and_device.adset_id} = ${adsets.id} ;;
-    relationship: many_to_one
-  }
-
-  join: campaigns {
-    type: left_outer
-    sql_on: ${ad_actions_by_placement_and_device.campaign_id} = ${campaigns.id} ;;
-    relationship: many_to_one
-  }
+  extends: [ad_actions_by_placement_and_device_config]
 }
 
 explore: adsets {
-  join: campaigns {
-    type: left_outer
-    sql_on: ${adsets.campaign_id} = ${campaigns.id} ;;
-    relationship: many_to_one
-  }
-
-
+  extends: [adsets_config]
 }
