@@ -32,11 +32,19 @@ local_dependency: {
   }
 
   override_constant: FACEBOOK_ADS_SCHEMA_NAME {
-    value: "facebook_data"
+    value: "@{FACEBOOK_ADS_SCHEMA_NAME}"
   }
 
   override_constant: FACEBOOK_ADS_ACCOUNT_ID {
-    value: "101441173373823"
+    value: "@{FACEBOOK_ADS_ACCOUNT_ID}"
   }
+
+  # override_constant: FACEBOOK_ADS_SCHEMA_NAME {
+  #   value: "facebook_data"
+  # }
+
+  # override_constant: FACEBOOK_ADS_ACCOUNT_ID {
+  #   value: "101441173373823"
+  # }
 
 }
