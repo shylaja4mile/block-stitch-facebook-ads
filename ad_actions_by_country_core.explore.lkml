@@ -19,4 +19,5 @@ explore: ad_actions_by_country_core {
     sql_on: ${ad_actions_by_country.campaign_id} = ${campaigns.id} ;;
     relationship: many_to_one
   }
+
 }

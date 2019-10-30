@@ -27,6 +27,10 @@ constant: FACEBOOK_ADS_ACCOUNT_ID {
 local_dependency: {
   project: "@{CONFIG_PROJECT_NAME}"
 
+  override_constant: CONNECTION_NAME {
+    value: "facebook_data"
+  }
+
   override_constant: FACEBOOK_ADS_SCHEMA_NAME {
     value: "facebook_data"
   }
