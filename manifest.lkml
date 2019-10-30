@@ -4,7 +4,7 @@ project_name: "block-stitch-facebook-ads"
 
 constant:  CONFIG_PROJECT_NAME {
   value: "block-stitch-facebook-ads-config"
-  #export:  override_required
+  export:  override_required
 }
 
 constant: CONNECTION_NAME {
