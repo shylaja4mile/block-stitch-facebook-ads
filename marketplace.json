@@ -1,0 +1,38 @@
+{
+  "label": "Facebook Ads Analysis",
+  "category_label": "Models",
+  "branding": {
+    "image_uri": "",
+    "tagline": "Load your Facebook ads data into your data warehouse with Stitch and use this Block to jumpstart your analysis. This Block will help you establish the foundations of your analysis, which you can then augment with additional objects based on your customized schema."
+  },
+
+  "constants": {
+    "CONNECTION_NAME": {
+      "label": "Connection Name",
+      "value_constraint": "connection"
+    },
+    "FACEBOOK_ADS_SCHEMA_NAME": {
+      "label": "Schema Name"
+    },
+    "CONFIG_PROJECT_NAME": {
+      "label": "Config Project Name"
+    },
+    "FACEBOOK_ADS_ACCOUNT_ID": {
+      "label": "Facebook Ads Account ID"
+    }
+  },
+  "models": [
+    {
+      "name": "block_stitch_facebook_ads",
+      "connection_constant": "CONNECTION_NAME"
+    }
+  ],
+  "auxiliary_projects": [
+    {
+      "git_uri": "git@github.com:llooker/block-stitch-facebook-ads-config.git",
+      "git_ref": "",
+      "label": "Stitch Facebook Ads Config",
+      "constant_name": "config_project_name"
+    }
+  ]
+}
