@@ -5,7 +5,7 @@ view: ad_insights_by_age_and_gender {
 }
 
 view: ad_insights_by_age_and_gender_core {
-  sql_table_name: @{FACEBOOK_ADS_SCHEMA_NAME}.facebook_ad_insights_age_and_gender_@{FACEBOOK_ADS_ACCOUNT_ID} ;;
+  sql_table_name: @{FACEBOOK_ADS_SCHEMA_NAME}.facebook_ads_insights_age_and_gender_@{FACEBOOK_ADS_ACCOUNT_ID} ;;
   ## STANDARD FIELDS
 
   dimension: account_id {

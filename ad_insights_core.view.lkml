@@ -5,7 +5,7 @@ view: ad_insights {
 }
 
 view: ad_insights_core {
-  sql_table_name: @{FACEBOOK_ADS_SCHEMA_NAME}.facebook_ad_insights_@{FACEBOOK_ADS_ACCOUNT_ID} ;;
+  sql_table_name: @{FACEBOOK_ADS_SCHEMA_NAME}.facebook_ads_insights_@{FACEBOOK_ADS_ACCOUNT_ID} ;;
   # API documentation: https://developers.facebook.com/docs/marketing-api/insights/fields/v2.6
 
   ## STANDARD FIELDS

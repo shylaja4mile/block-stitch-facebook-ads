@@ -5,7 +5,7 @@ view: ad_action_insights {
 }
 
 view: ad_action_insights_core {
-  sql_table_name: @{FACEBOOK_ADS_SCHEMA_NAME}.facebook_ad_insights_@{FACEBOOK_ADS_ACCOUNT_ID}__actions ;;
+  sql_table_name: @{FACEBOOK_ADS_SCHEMA_NAME}.facebook_ads_insights_@{FACEBOOK_ADS_ACCOUNT_ID}__actions ;;
 
   dimension: ad_id {
     type: string
