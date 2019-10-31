@@ -1,11 +1,11 @@
-include: "//@{CONFIG_PROJECT_NAME}/ads_insights.view"
+include: "//@{CONFIG_PROJECT_NAME}/ad_insights.view"
 
 view: ad_insights {
-  extends: [ads_insights_config]
+  extends: [ad_insights_config]
 }
 
 view: ad_insights_core {
-  sql_table_name: @{FACEBOOK_ADS_SCHEMA_NAME}.facebook_ads_insights_@{FACEBOOK_ADS_ACCOUNT_ID} ;;
+  sql_table_name: @{FACEBOOK_ADS_SCHEMA_NAME}.facebook_ad_insights_@{FACEBOOK_ADS_ACCOUNT_ID} ;;
   # API documentation: https://developers.facebook.com/docs/marketing-api/insights/fields/v2.6
 
   ## STANDARD FIELDS
