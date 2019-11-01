@@ -8,12 +8,12 @@ constant:  CONFIG_PROJECT_NAME {
 }
 
 constant: CONNECTION_NAME {
-  value: "facebook_data"
+  value: "facebook ads connection name"
   export: override_required
 }
 
 constant: FACEBOOK_ADS_SCHEMA_NAME {
-  value: "facebook_data"
+  value: "facebook ads schema name"
   export: override_required
 }
 
