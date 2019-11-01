@@ -18,7 +18,7 @@ constant: FACEBOOK_ADS_SCHEMA_NAME {
 }
 
 constant: FACEBOOK_ADS_ACCOUNT_ID {
-  value: "101441173373823"
+  value: "facebook account id"
   export: override_required
 }
 
