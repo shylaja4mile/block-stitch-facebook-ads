@@ -30,7 +30,7 @@
   "auxiliary_projects": [
     {
       "git_uri": "git://github.com/llooker/block-stitch-facebook-ads-config.git",
-      "git_ref": "9697897f233f0de53d64e27d8033d3280296b80d",
+      "git_ref": "ea9002e5456b5b948545575882c68f4b8443854e",
       "label": "Stitch Facebook Ads Config",
       "constant_name": "config_project_name"
     }
