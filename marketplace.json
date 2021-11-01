@@ -14,9 +14,6 @@
     "FACEBOOK_ADS_SCHEMA_NAME": {
       "label": "Schema Name"
     },
-    "CONFIG_PROJECT_NAME": {
-      "label": "Config Project Name"
-    },
     "FACEBOOK_ADS_ACCOUNT_ID": {
       "label": "Facebook Ads Account ID"
     }
@@ -25,14 +22,6 @@
     {
       "name": "block_stitch_facebook_ads_v2",
       "connection_constant": "CONNECTION_NAME"
-    }
-  ],
-  "auxiliary_projects": [
-    {
-      "git_uri": "git://github.com/llooker/block-stitch-facebook-ads-config.git",
-      "git_ref": "e67c98ecb77e832f9be29601e6e219a997487244",
-      "label": "Stitch Facebook Ads Config",
-      "constant_name": "CONFIG_PROJECT_NAME"
     }
   ]
 }
