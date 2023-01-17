@@ -98,8 +98,9 @@ view: ad_insights {
   }
 
   dimension: actions {
+    description: "Dimension is hard coded to 0 since the table field total_actions used does not exist in schema. Use refinement to define this dimension."
     type: number
-    sql: ${TABLE}.total_actions ;;
+    sql: 0;; #${TABLE}.total_actions ;;
   }
 
   dimension: website_clicks {
@@ -114,6 +115,7 @@ view: ad_insights {
   }
 
   measure: total_actions {
+    description: "The related dimension(actions) for this measure is hard coded to 0 since the table field total_actions does not exist in schema. Use refinement to re-define this measure if needed."
     type: sum
     sql: ${actions} ;;
     drill_fields: [detail*]
