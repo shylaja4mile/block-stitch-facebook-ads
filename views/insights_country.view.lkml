@@ -159,7 +159,8 @@ view: ad_insights_by_country {
   }
 
   measure: total_actions {
+    description: "Hard coding the measure to 0 since the table field used earlier total_actions does not exist in schema. Use refinement to re-define the measure"
     type: sum
-    sql: ${TABLE}.total_actions ;;
+    sql: 0;; #${TABLE}.total_actions ;;
   }
 }
